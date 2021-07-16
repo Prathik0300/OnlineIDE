@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ProjectF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    
+</head>
+    <body style="background-color: #222121; overflow: hidden;" id="body" onload="exitPreloader()">
+    <div id="preloader">
+        <div class="circle"></div>
+        <p>Loading...</p>
+    </div>   
+
+    <div id="background" style="display: none;"></div>
+                        
+                        <!--NAVBAR-->
+        <div id="navWrapper">
+            <div id="navbar">
+                <div id="navitems">
+                <a id="navlink" style="margin-left: 60px;" href="#">Home</a>
+                <a id="navlink" href="#">About Us</a>
+                <a id="navlink" href="#">Gallery</a>
+                <a id="navlink" href="#">Artist Diaries</a>
+                <a id="navlink" href="#">Contact Us</a>
+                </div>
+                <button type="button" id="storeButton">STORE</button>
+            </div>
+            <div id="toggleWrapper">
+            <div id="toggleButton" class="isActive">
+                <div id="hamburger"></div>
+            </div>
+            </div>
+                    
+                    <!--SLIDING NAVBAR-->
+
+            <div id="slideNav" style="display: none;">
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Gallery</a>
+                <a href="#">Artist Diaries</a>
+                <a href="#">Contact Us</a>
+    
+                <button type="button" id="Button">STORE</button>
+            </div>
+    
+            <div id="logo">
+                <img src="./assets/project-f.png" width="400px">
+            </div>
+            <div id="caption">
+                <p>#fortheartists</p>
+                <div id="captionDesign"></div>
+                <div id="captionDesign1"></div>
+            </div>
+            
+                    <!--JOIN US NOW-->
+            
+            <div id="registring">
+                <p>Be a part of Project F ! Join us now</p>
+
+                <div id="hiring">
+                    <button id="Artists" type="button">
+                        For Artists
+                    </button>
+                    <button id="Artists" type="button">
+                        We're Hiring
+                    </button>
+                </div>
+            </div>
+
+                    <!--ABOUT US-->
+        </div>
+        <div id="about">
+            <div data-aos="fade-up" id="heading">
+                <u>About Us</u>
+            </div>
+            <div id="aboutContent">
+                <div data-aos="fade-up">
+                We are the next Innovation in the fashion industry, Bringing the true colours and representing the diverse ethnicity of India to our customers, with artists and designers from all across India, we offer custom ethnic designer wear and daily wear ethnic themed dresses at the most affordable rates!
+                </div>
+                <br>
+                <div data-aos="fade-up">
+                We are providing a platform to those talented fashion designers and boutiques to market and sell their ethnically themed dresses and designs to the world who otherwise would be constrained because of certain financial, technical or marketing setbacks.
+                </div>
+                <br>
+                <div data-aos="fade-up">
+                Presenting to you our unique E-commerce store that sells Ethnically modern dresses at the best rates, Happy shopping with Project F!
+                </div>
+                <br>
+                <div data-aos="fade-up">
+                Are you a designer looking for an opportunity to showcase your designs and get a platform to market your product?
+                </div>
+                <br>
+                <div data-aos="fade-up" style="margin-bottom: 1rem;">
+                Fashion Designers & Boutiques are at the heart of our unique business model, which includes creativity, design, distribution, and sales, through our network, if you are an artist register on a platform today!
+                </div>
+            </div>
+        </div>
+        
+        <div id="Work">
+            <div id="header" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <h2 data-aos="fade-up">How We Work</h2>
+            <h4 data-aos="fade-up">Build your unique identity with project F.We are here to get every designer their deserved space to express their creative quotient and also market it.
+            </h4>
+            </div>
+
+            <div data-aos="fade-up" id="process">
+                
+                <i class="fa fa-shopping-basket bulb firstEle">
+                    <span class="details">
+                        <h4>Register on Project F portal</h4>
+                    </span>
+                </i>
+                <div class="line"></div>
+                <i class="fa fa-phone bulb">
+                    <span class="details">
+                        <h4>A scutinization of designs and scheduled telephonic conversations</h4>
+                    </span>
+                </i>
+                <div class="line"></div>
+                <i class="fa fa-handshake-o bulb">
+                    <span class="details">
+                        <h4>Confirmation Call & Interview</h4>
+                    </span>
+                </i>
+                <div class="line"></div>
+                <i class="fa fa-desktop bulb">
+                    <span class="details">
+                        <h4>Product Listing on our E Commerce</h4>
+                    </span>
+                </i>
+                <div class="line"></div>
+                <i class="fa fa-diamond bulb">
+                    <span class="details">
+                        <h4>Brand Marketing</h4>
+                    </span>
+                </i>
+                <div class="line"></div>
+                <i class="fa fa-map bulb lastEle">
+                    <span class="details">
+                        <h4>Sell Your Products via our platform</h4>
+                    </span>
+                </i>
+                
+            </div>
+        </div>
+
+        
+
+    
+    
+    <script>
+        AOS.init({
+            duration:500,
+            offset:120,
+            easing:"ease-in-out"
+        })
+    </script>
+    <script src="script.js"></script>
+
+</body>

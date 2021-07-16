@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* body{
+  overflow-x: scroll; 
+} */
+.container-fluid{
+  margin: 0 !important;
+  padding: 0 !important;
+  /* */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* App */
+#MainDiv{
+  overflow-x: scroll;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#MainDiv::-webkit-scrollbar{
+  position: absolute;
+  bottom: 0;
 }
 
-.App-link {
-  color: #61dafb;
+/* Left Pane */
+
+#LeftPane{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: rgba(0,0,0,0.9);
+  overflow-y: scroll;
+  overflow-x: hidden !important;
+  border-right: 5px solid black;
+  color: gray;
+  /* border-right: 1rem;
+  border-color: black; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#LeftPane::-webkit-scrollbar{
+  display: none;
+}
+
+#leftPane:hover #LeftPane::-webkit-scrollbar{
+  display: '';
+}
+
+#LeftPane div{
+  margin-top: 1rem;
+}
+
+.PaneContent{
+  position: relative;
+  left: 1rem;
+  top: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+  -webkit-transition: ease-in-out 0.3s;
+}
+
+.PaneContent:hover{
+  left: 0;
+  margin-left: 0.3rem;
+  right: 0;
+  cursor: pointer;
+  background-color: gray;
+  color: black;
+}
+
+/* Editor */
+
+#editor{
+  background-color: gray;
+  position: fixed;
+  height: 100vh;
+  width: 650px;
+  left: 250px;
+  overflow-x: scroll;
+}
+
+#editor div{
+  margin-top: 1rem;
 }
