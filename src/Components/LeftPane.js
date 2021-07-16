@@ -21,8 +21,22 @@ function Explorer(){
     const [selectedLanguage,setSelectedLanguage] = useState('xml');
     const [LanguageIndex,setLanguageIndex] = useState(1);
 
+    const [html,setHtml] = useState('');
+    const [css,setCss] = useState('');
+    const [js,setJs] = useState('');
 
-    
+
+    const RenderDoc = `
+    <html>
+        <body>${html}</body>
+        <style>${css}</style>
+        <script>${js}</script>
+    </html>
+    `    
+
+    useEffect(() => {
+        setHtml(html)
+    },[])
     useEffect(()=>{
         setLanguageIndex(Index[selectedLanguage]);
     },[selectedLanguage])
@@ -35,8 +49,8 @@ function Explorer(){
 
     return(
         <div className="container-fluid">
-            <div className="row">
-                <div className="col-3">
+            <div className="ComponentDiv">
+                <div>
                     <div id="LeftPane">
                         <div className="PaneContent" onClick={() => ChangeSelectedLanguage('xml')}>
                             index.html
@@ -49,8 +63,21 @@ function Explorer(){
                         </div>
                     </div>
                 </div>
-                <div id="editor" className="col-5">
-                    <Editor language={selectedLanguage} TitleName={selectedLanguage=='xml'?"html":selectedLanguage} value={"f"} onChange={"f"}/>
+                <div className="EditDiv">
+                    <div id="editor">
+                        <Editor language={selectedLanguage} TitleName={selectedLanguage=='xml'?"html":selectedLanguage} value={LanguageIndex==1 ? html:LanguageIndex==2 ? css : js} onChange={LanguageIndex==1 ? setHtml : LanguageIndex==2 ? setCss : setJs}/>
+                    </div>
+
+                    <div className="iframeDiv">
+                        <iframe
+                            srcDoc={RenderDoc}
+                            title="Output"
+                            sandbox="allow-scripts"
+                            frameBorder="0"
+                            width="100%"
+                            height="100%"
+                        />
+                    </div>
                 </div>
             </div>
         </div>

@@ -10,18 +10,18 @@ import { Controlled } from 'react-codemirror2';
 
 function Editor({language,TitleName,value,onChange}){
 
-    function HandleChange(editor,data,value){
+    function handleChange(editor,data,value){
         onChange(value)
     }
 
     return(
         <div className="editor-container">
-            <div className="editor-title">
+            <div className="editor-title" style={{marginTop:"15px"}}>
                 <b>index.{TitleName}</b>
             </div>
-
+            <br/>
             <Controlled
-                onBeforeChange={HandleChange}
+                onBeforeChange={handleChange}
                 value={value}
                 className="code-mirror-wrapper"
                 options={{
@@ -29,7 +29,8 @@ function Editor({language,TitleName,value,onChange}){
                     lint:true,
                     mode:language,
                     theme:"material",
-                    lineNumbers:true
+                    lineNumbers:true,  
+                    scrollbarStyle:null                  
                 }}
             />
         </div>
