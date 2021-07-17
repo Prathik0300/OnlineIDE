@@ -10,6 +10,7 @@
     "bootstrap": "^5.0.2",
     "codemirror": "^5.62.0",
     "cors": "^2.8.5",
+    "gh-pages": "^3.2.3",
     "pastebin-api": "^2.2.0",
     "react": "^17.0.2",
     "react-codemirror2": "^7.2.1",
