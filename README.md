@@ -2,7 +2,7 @@
 
 This is an Online IDE that aims to make the process of web development easy. You can see the changes in the code in real-time in the Output screen. You can access the website from [here](https://prathik0300.github.io/OnlineIDE/).
 
-## Clone The repo
+## Clone The repository
 
 ### Copy the following commands to clone the repo and run OnlineIDE Project in your local machine
 
