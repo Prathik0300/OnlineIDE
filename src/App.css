@@ -126,6 +126,15 @@ body{
   height: 100%;
 }
 
+.shareBtn{
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.shareBtn:hover{
+  cursor: pointer;
+}
+
 /* Code Editor Styling */
 
 .code-mirror-wrapper{

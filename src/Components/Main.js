@@ -24,7 +24,6 @@ function Main(){
     const [html,setHtml] = useState('');
     const [css,setCss] = useState('');
     const [js,setJs] = useState('');
-    const [activeFile,setActiveFile] = useState(0);
     const [SrcFile,setSrcFile] = useState('')
 
     useEffect(() => {
@@ -40,20 +39,21 @@ function Main(){
 
         return () => clearTimeout(timeout)
     },[html,css,js])
+
     useEffect(()=>{
         setLanguageIndex(Index[selectedLanguage]);
     },[selectedLanguage])
 
     const ChangeSelectedLanguage = (language,idx) =>{
         setSelectedLanguage(language);
-        setActiveFile(idx);
+        setLanguageIndex(idx+1);
     }
 
     
 
     const explorer = fileNames.map((file,idx) => {
         return(
-            <div key={idx} className={`PaneContent ${idx===activeFile ? "active" : ""}`} onClick={() => ChangeSelectedLanguage(Ext[idx],idx)}>
+            <div key={idx} className={`PaneContent ${idx===LanguageIndex-1 ? "active" : ""}`} onClick={() => ChangeSelectedLanguage(Ext[idx],idx)}>
                 {file}
             </div>
         )
@@ -77,7 +77,7 @@ function Main(){
                     <div className="EditDiv">
                         <div className="editor">
                             <div id="EditorComponent">
-                                <Editor language={selectedLanguage} TitleName={selectedLanguage=='xml'?"html":selectedLanguage} value={LanguageIndex==1 ? html:LanguageIndex==2 ? css : js} onChange={LanguageIndex==1 ? setHtml : LanguageIndex==2 ? setCss : setJs}/>
+                                <Editor language={selectedLanguage} TitleName={selectedLanguage=='xml'?"html":selectedLanguage} value={LanguageIndex==1 ? html:LanguageIndex==2 ? css : js} onChange={LanguageIndex==1 ? setHtml : LanguageIndex==2 ? setCss : setJs} fileName={fileNames[LanguageIndex-1]}/>
                             </div>
                         </div>
 
