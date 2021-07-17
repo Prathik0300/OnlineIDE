@@ -22,10 +22,12 @@ body{
   max-width: 100%;
   max-height: 100%;
   background-image: linear-gradient(#485563,#29323c) !important;
- 
+  background-image: -webkit-linear-gradient(#485563,#29323c) !important;
+  background-image: -moz-linear-gradient(#485563,#29323c) !important;
+  background-image: -o-linear-gradient(#485563,#29323c) !important; 
 }
 
-/* Container Styling */
+/* Container Div Styling */
 
 .custom-container{
   display: flex;
@@ -35,7 +37,7 @@ body{
 }
 
 
-/* Row Styling */
+/* Row Div Styling */
 
 .custon-row{
   display: flex;
@@ -85,6 +87,8 @@ body{
   margin-right: 0.1rem;
   height: 100%;
   -webkit-transition: ease-in-out 0.2s;
+  -moz-transition: ease-in-out 0.2s;
+  -o-transition: ease-in-out 0.2s;
 }
 
 .PaneContent:hover{
@@ -96,6 +100,13 @@ body{
 .active{
   background-color: gray;
   color: black;
+}
+
+/* Webapp Logo */
+
+.WebLogo{
+  font-size: 1.3rem;
+  /* font-weight: */
 }
 
 /* Editor Div Styling */
@@ -110,6 +121,9 @@ body{
   position: relative;
   margin-left: 12.5rem;
   background-image: linear-gradient(#485563,#29323c);
+  background-image: -webkit-linear-gradient(#485563,#29323c);
+  background-image: -moz-linear-gradient(#485563,#29323c);
+  background-image: -o-linear-gradient(#485563,#29323c); 
 }
 
 .editor{
@@ -144,7 +158,6 @@ body{
   left: 0rem;
   width: 80%;
   height: 50vh;
-  
 }
 
 .CodeMirror{
@@ -225,7 +238,6 @@ body{
   
 
   /* Container Responsiveness Styling */
-
   .custom-container{
     overflow-x: hidden;
   }
@@ -238,7 +250,6 @@ body{
   }
 
   /* File Explorer (Pane) Responsiveness Styling */
-
   #Pane{
     display: flex;
     align-items: center;
@@ -279,8 +290,8 @@ body{
     top: 0;
   }
 
-  /* Edit Div Responsiveness Styling */
 
+  /* Edit Div Responsiveness Styling */
   .EditDiv{
     width: 100vw;
     height: 100%;
@@ -304,7 +315,6 @@ body{
   }
 
   /* Code Editor Responsiveness Styling */
-
   .code-mirror-wrapper{
     position: relative;
     width: 95%;
@@ -313,7 +323,6 @@ body{
 
 
   /* Output Div Respinsiveness Styling */
-
   .iframeDiv{
     position: relative;
     margin-top: 3rem;
