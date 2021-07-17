@@ -72,7 +72,7 @@ function Main(){
                         <div id="Pane">
                             <div id="PaneTitle">
                                 <b><BsCodeSlash className="WebLogo" style={{marginRight:"0.5rem"}}/></b>
-                                <i>Easy Coder</i>
+                                <i>Easy Coder IDE</i>
                             </div>
                             <div id="PaneContents">
                                 {explorer}

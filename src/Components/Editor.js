@@ -23,9 +23,7 @@ let config = {
     "Access-Control-Allow-Headers":"Content-Type"
 }
 
-
 // Editor Component
-
 function Editor({language,TitleName,value,onChange,fileName}){
 
     // Function handler to update state value with editor value
