@@ -1,3 +1,8 @@
+# Online IDE
+
+This is an Online IDE that aims to make the process of web development easy. You can see the changes in the code in real-time in the Output screen. You can access the website from [here](https://prathik0300.github.io/OnlineIDE/).
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -13,6 +18,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### Screenshot of Web Browser after `npm start`
+<img width="960" alt="ide" src="https://user-images.githubusercontent.com/51969341/126042266-e5bdae4f-22e8-4915-9897-727305be0d12.PNG">
+
+
+### Demo of Implementation
+
+
+https://user-images.githubusercontent.com/51969341/126042278-a6fe98de-87c6-42dd-82fb-546d1cb40345.mp4
+
 
 ### `npm test`
 
