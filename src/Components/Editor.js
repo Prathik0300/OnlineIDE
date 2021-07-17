@@ -21,33 +21,29 @@ function Editor({language,TitleName,value,onChange,fileName}){
     }
 
     async function GetSharableLink(){
-        // let link;
-        // axios.post("https://pastebin.com/api/api_post.php",{},{
-        //     api_dev_key:'Ct9mTFHBnNDXoqPE05KdOatFFsgzwfuJ',
-        //     api_option:"paste",
-        //     api_paste_code:{value},
-        //     api_paste_name:{fileName}
-        // }).then((response) => {
-        //     link = response;
-        //     console.log("link : ",response);
-        // });
-        // console.log("link val : ",link);
+        let link;
+        axios.post("https://pastebin.com/api/api_post.php",{},{
+            api_dev_key:'Ct9mTFHBnNDXoqPE05KdOatFFsgzwfuJ',
+            api_option:"paste",
+            api_paste_code:{value},
+            api_paste_name:{fileName}
+        }).then((response) => {
+            link = response;
+            window.alert("Yout Sharable Link : ",response);
+            console.log("link : ",response);
+        });
+        console.log("link val : ",link);
 
-        const url = client.createPaste({
-            code: {value},
-            expireDate: "N",
-            format: "html",
-            name: "something.js",
-            publicity: 0,
-            });
+        // const url = client.createPaste({
+        //     code: {value},
+        //     expireDate: "N",
+        //     format: "html",
+        //     name: "something.js",
+        //     publicity: 0,
+        //     });
         
-            console.log(url);
+            // console.log(url);
     }
-
-    
-
-   
-
 
     return(
         <div className="editor-container">
