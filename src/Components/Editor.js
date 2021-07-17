@@ -8,11 +8,17 @@ import "../App.css";
 import "pastebin-api";
 import {FaShareAltSquare} from "react-icons/fa"
 import { Controlled } from 'react-codemirror2';
-import PasteClient from 'pastebin-api';
 
 const axios = require("axios");
-const client = new PasteClient("Ct9mTFHBnNDXoqPE05KdOatFFsgzwfuJ");
 
+const url = "https://cors-anywhere.herokuapp.com/https://pastebin.com/api/api_post.php";
+
+let config = {
+    "Access-Control-Allow-Origin": window.location.origin.toString(),
+    "Access-Control-Allow-Credentials":true,
+    "Access-Control-Allow-Methods" : "POST",
+    "Access-Control-Allow-Headers":"Content-Type"
+}
 
 function Editor({language,TitleName,value,onChange,fileName}){
 
@@ -21,29 +27,15 @@ function Editor({language,TitleName,value,onChange,fileName}){
     }
 
     async function GetSharableLink(){
-        let link;
-        axios.post("https://pastebin.com/api/api_post.php",{},{
+        await axios.post(url,{
             api_dev_key:'Ct9mTFHBnNDXoqPE05KdOatFFsgzwfuJ',
             api_option:"paste",
             api_paste_code:{value},
             api_paste_name:{fileName}
-        }).then((response) => {
-            link = response;
+        },config).then((response) => {
             window.alert("Yout Sharable Link : ",response);
-            console.log("link : ",response);
         });
-        console.log("link val : ",link);
-
-        // const url = client.createPaste({
-        //     code: {value},
-        //     expireDate: "N",
-        //     format: "html",
-        //     name: "something.js",
-        //     publicity: 0,
-        //     });
-        
-            // console.log(url);
-    }
+    };
 
     return(
         <div className="editor-container">
