@@ -1,11 +1,11 @@
 import './App.css';
-import Explorer from "./Components/LeftPane";
+import Main from "./Components/Main";
 
 
 function App() {
   return (
-    <div id="MainDiv" className="container">
-      <Explorer/>
+    <div id="MainDiv" className="custom-container">
+      <Main/>
     </div>
   );
 }

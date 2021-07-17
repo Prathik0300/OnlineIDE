@@ -2,171 +2,317 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+}
+
+/* Body Styling */
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: rgb(170, 177, 169);
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgba(0,0,0,0.5)
+}
+
+body{
+  overflow-x: hidden;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: gray !important;
+ 
 }
 
 
+/* Container Styling */
 
-/* App */
-
-
-#MainDiv::-webkit-scrollbar{
-  bottom: 0;
+.custom-container{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
 }
 
-/* #MainDiv{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-} */
-/* Left Pane */
 
-.ComponentDiv{
+/* Row Styling */
+
+.custon-row{
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 100%;
-  flex-direction: row;
   height: 100%;
 }
 
-.EditDiv{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  flex-direction: row;
-  height: 100%;
-  left: 5rem;
-}
 
-#LeftPane{
+/* File Explorer (Pane) Styling */
+
+#Pane{
   position: fixed;
   left: 0rem;
-  top: 0rem;
-  margin-left: 0;
-  margin-top: 0;
-  height: 100vh;
-  width: 250px;
+  height: 100%;
+  width: 200px;
   background-color: rgba(0,0,0,0.9);
   border-right: 5px solid black;
   color: gray;
 }
 
-#LeftPane::-webkit-scrollbar{
-  display: none;
+#PaneTitle{
+  background-color: black;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#LeftPane div{
-  margin-top: 1rem;
+#PaneContents{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 5rem;
+  width: 100%;
 }
 
 .PaneContent{
-  position: relative;
-  left: 1rem;
-  top: 2rem;
+  margin-top: 1rem;
   font-weight: bold;
-  padding: 1rem;
-  -webkit-transition: ease-in-out 0.1s;
+  font-size: 1.2rem;
+  width: 100%;
+  padding-left: 0.5rem;
+  height: 100%;
+  -webkit-transition: ease-in-out 0.2s;
 }
 
 .PaneContent:hover{
-  left: 0;
-  margin-left: 0.3rem;
-  right: 0;
-  cursor: pointer;
-  background-color: gray;
   color: black;
+  background-color: gray;
+  cursor: pointer;
 }
 
-/* Editor */
 
-.code-mirror-wrapper{
+/* Editor Div Styling */
+
+.EditDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
   position: relative;
-  top: -0.5rem;
-  left: -0.5rem;
-  right: -2rem;
-  margin-bottom: 5rem;
+  margin-left: 12.5rem;
+  background-color: gray;
+}
+
+.editor{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 1rem;
+  top: -0.8rem;
 }
 
 .editor-container{
-  display: block;
+  position:relative;
   width: 100%;
   height: 100%;
-  overflow-y: hidden;
+}
+
+/* Code Editor Styling */
+
+.code-mirror-wrapper{
+  position: relative;
+  top: -1rem;
+  right: 1rem;
+  left: 0rem;
+  width: 80%;
+  height: 50vh;
+}
+
+.CodeMirror{
+  width: 100% !important;
+  height: 100% !important;
 }
 
 
-.CodeMirror{
-  height: 90vh !important;
-  width: 40vw !important;
-} 
+/* Output Div Styling */
 
-/* Output */
-/* 
+.output{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 1rem;
+  top: -1rem;
+}
+
 .iframeDiv{
   position: relative;
-} */
+  background-color: #fff;
+  width: 80%;
+  height: 100%;
+}
 
 
 /* Responsiveness */
 
-@media(max-width:1227px){
-  .editor-container{
-    margin-left: -4rem; 
+@media(max-width:1150px){
+  .code-mirror-wrapper{
+    width: 78%;
   }
-  
-}
-
-@media(max-width:1107px){
-  .editor-container{
-    margin-left: -3rem; 
-  }
-  
-}
-
-@media(max-width:1070px){
-  .editor-container{
-    margin-left: -1.5rem; 
+  .iframeDiv{
+    width: 78%;
   }
 }
 
-@media(max-width:1018px){
-  .editor-container{
-    margin-left: -0.5rem; 
+@media(max-width:1052px){
+  .code-mirror-wrapper{
+    width: 76%;
+  }
+  .iframeDiv{
+    width: 76%;
   }
 }
 
-@media(max-width:867px){
-  .editor-container{
-    margin-left: 2rem; 
+@media(max-width:964px){
+  .code-mirror-wrapper{
+    width: 74%;
+  }
+  .iframeDiv{
+    width: 74%;
+  }
+}
+
+@media(max-width:900px){
+  .code-mirror-wrapper{
+    width: 72%;
+  }
+  .iframeDiv{
+    width: 72%;
+  }
+}
+
+
+@media(max-width:830px){
+  .code-mirror-wrapper{
+    width: 70%;
+  }
+  .iframeDiv{
+    width: 70%;
   }
 }
 
 @media(max-width:800px){
   
-  #LeftPane{
+
+  /* Container Responsiveness Styling */
+
+  .custom-container{
+    overflow-x: hidden;
+  }
+
+  /* Row Responsiveness Styling */
+  .custon-row{
+    position: relative;
+    flex-direction: column;   
+    overflow-x: hidden; 
+  }
+
+  /* File Explorer (Pane) Responsiveness Styling */
+
+  #Pane{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    position: fixed;
+    flex-direction: column;
+    position: relative;
     top: 0;
+    right: 0;
     width: 100%;
     height: 100px;
-  }
-
-  .editor-container{
-    position: relative;
-    display: block;
-    margin-top: 2rem;
-    left: 0;
-    /* width: 100%;
-    height: 100%;
-    margin-left: -5rem; 
-    overflow-y: hidden; */
+    border-right: none;
   }
   
+  #PaneContents{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    top: 0;
+    margin-left: 0.4rem;
+  }
+  
+  .PaneContent{
+    margin-top: 0.5rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
+  #PaneTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+  }
+
+  /* Edit Div Responsiveness Styling */
+
+  .EditDiv{
+    width: 100vw;
+    height: 100%;
+    margin-left: 0;
+    margin-right: 5rem;
+  }
+  
+  .editor{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 6rem;
+  }
+  
+  .editor-container{
+    position:relative;
+    width: 100%;
+    height: 100%;
+    right: 5.2rem;
+    top: 2rem;
+  }
+
+  /* Code Editor Responsiveness Styling */
+
+  .code-mirror-wrapper{
+    position: relative;
+    width: 95%;
+    height: 60vh;
+  }
+
+
+  /* Output Div Respinsiveness Styling */
+
+  .iframeDiv{
+    position: relative;
+    margin-top: 3rem;
+    width: 95%;
+    height: 60vh;
+    right: 0.2rem;
+  }
+}
+
+/* Mobile Styling */
+
+@media(max-width:780px){
+  .code-mirror-wrapper{
+    width: 95%;
+  }
+  .iframeDiv{
+    width: 95%;
+  }
 }
