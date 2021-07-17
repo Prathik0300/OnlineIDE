@@ -9,6 +9,14 @@ const Index ={
     'js' : 3
 }
 
+const Ext = {
+    0 : "xml",
+    1 : "css",
+    2 : "js"
+}
+
+const fileNames = ["index.html","index.css","index.js"]
+
 function Main(){
 
     const [selectedLanguage,setSelectedLanguage] = useState('xml');
@@ -16,22 +24,40 @@ function Main(){
     const [html,setHtml] = useState('');
     const [css,setCss] = useState('');
     const [js,setJs] = useState('');
+    const [activeFile,setActiveFile] = useState(0);
+    const [SrcFile,setSrcFile] = useState('')
 
-    const RenderDoc = `
-    <html>
-        <body>${html}</body>
-        <style>${css}</style>
-        <script>${js}</script>
-    </html>
-    `    
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setSrcFile(`
+            <html>
+                <body>${html}</body>
+                <style>${css}</style>
+                <script>${js}</script>
+            </html>
+            ` )
+        },200)
 
+        return () => clearTimeout(timeout)
+    },[html,css,js])
     useEffect(()=>{
         setLanguageIndex(Index[selectedLanguage]);
     },[selectedLanguage])
 
-    const ChangeSelectedLanguage = (language) =>{
+    const ChangeSelectedLanguage = (language,idx) =>{
         setSelectedLanguage(language);
+        setActiveFile(idx);
     }
+
+    
+
+    const explorer = fileNames.map((file,idx) => {
+        return(
+            <div key={idx} className={`PaneContent ${idx===activeFile ? "active" : ""}`} onClick={() => ChangeSelectedLanguage(Ext[idx],idx)}>
+                {file}
+            </div>
+        )
+    })
 
     return(
         <>
@@ -43,15 +69,7 @@ function Main(){
                                 <i>File Explorer</i>
                             </div>
                             <div id="PaneContents">
-                                <div className="PaneContent" onClick={() => ChangeSelectedLanguage('xml')}>
-                                    index.html
-                                </div>
-                                <div className="PaneContent" onClick={() => ChangeSelectedLanguage('css')}>
-                                    index.css
-                                </div>
-                                <div className="PaneContent" onClick={() => ChangeSelectedLanguage('js')}>
-                                    index.js
-                                </div>
+                                {explorer}
                             </div>
                         </div>
                     </div>
@@ -66,7 +84,7 @@ function Main(){
                         <div className="output">
                             <div className="iframeDiv">
                                 <iframe
-                                    srcDoc={RenderDoc}
+                                    srcDoc={SrcFile}
                                     title="Output"
                                     sandbox="allow-scripts"
                                     frameBorder="0"

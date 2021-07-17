@@ -16,7 +16,7 @@ function Editor({language,TitleName,value,onChange}){
 
     return(
         <div className="editor-container">
-            <div className="editor-title" style={{marginTop:"15px"}}>
+            <div className="editor-title" style={{marginTop:"15px",color:"white"}}>
                 <b>index.{TitleName}</b>
             </div>
             <br/>
